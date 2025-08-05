@@ -9,4 +9,10 @@ ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
 # Run in development mode (for testing)
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=10000"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", \
+  "--http-port=10000", \
+  "--hostname-strict=false", \
+  "--hostname-strict-https=false", \
+  "--proxy=edge", \
+  "--hostname=keycloak-on-render-qiud.onrender.com"]
+
